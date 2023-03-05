@@ -40,7 +40,7 @@ Variables
 |:--------------------|:-------------------------------------------------------|:-------------|
 | autoStart           | For auto start migrations when Strapi start or restart | false        |
 | migrationFolderPath | Path to migrations files                               | 'migrations' |
-
+| filePrefix          | Prefix of the file names, defaults to v for version    | 'v'          |  
 
 If you don't use autoStart your can call migrations where you want from this method : 
 

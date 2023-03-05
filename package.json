@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-migrations",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Initialize or update your data easly with a version controller.",
   "strapi": {
     "name": "migrations",
@@ -11,13 +11,13 @@
   "scripts": {
     "release": "standard-version && git push --follow-tags && npm publish"
   },
-  "homepage": "https://github.com/TonyDeplanque/strapi-plugin-migrations",
+  "homepage": "https://github.com/Ryware/strapi-plugin-migrations",
   "bugs": {
-    "url": "https://github.com/TonyDeplanque/strapi-plugin-migrations/issues"
+    "url": "https://github.com/Ryware/strapi-plugin-migrations/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/TonyDeplanque/strapi-plugin-migrations.git"
+    "url": "https://github.com/Ryware/strapi-plugin-migrations.git"
   },
   "dependencies": {
     "@strapi/helper-plugin": "^4.1.1",
@@ -27,20 +27,13 @@
     "standard-version": "^9.3.2"
   },
   "peerDependencies": {
-    "@strapi/strapi": "^4.0.0"
+    "@strapi/strapi": "^4.5.6"
   },
   "author": {
-    "name": "Tony Deplanque",
-    "email": "deplanque.tony@gmail.com",
-    "url": "https://github.com/TonyDeplanque"
+    "name": "Michael Tarnorutsky",
+    "email": "michael@ryware.dev",
+    "url": "https://github.com/misha130"
   },
-  "maintainers": [
-    {
-      "name": "Tony Deplanque",
-      "email": "deplanque.tony@gmail.com",
-      "url": "https://github.com/TonyDeplanque"
-    }
-  ],
   "keywords": [
     "strapi",
     "plugin",
@@ -59,7 +52,7 @@
     "strapi-migrations-data"
   ],
   "engines": {
-    "node": ">=12.x.x <=16.x.x",
+    "node": ">=12.x.x <=18.x.x",
     "npm": ">=6.0.0"
   },
   "license": "MIT"

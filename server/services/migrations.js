@@ -4,6 +4,8 @@ const fs = require("fs");
 const path = require("path");
 
 module.exports = ({ strapi }) => ({
+
+  config: strapi.config.get('plugin.migrations'),
   checkFile: function (dir, file, currentVersion) {
     const filePath = path.join(dir, file);
     const fileVersion = this.getVersionFromFile(file);
@@ -70,7 +72,7 @@ module.exports = ({ strapi }) => ({
   },
 
   getFileRegex() {
-    return 'v([0-9]+).*\.js'
+    return `${this.config.filePrefix}([0-9]+).*\.js`
   },
 
   checkMigrationsFolderExist() {
@@ -78,13 +80,13 @@ module.exports = ({ strapi }) => ({
   },
 
   getPathFolder() {
-    const config = strapi.config.get('plugin.migrations')
-    return path.resolve(process.cwd(), config.migrationFolderPath)
+    return path.resolve(process.cwd(), this.config.migrationFolderPath)
   },
 
   getVersionFromFile(filename) {
     const regex = this.getFileRegex()
-    return filename.match(regex)[1] ? Number(filename.match(regex)[1]) : 0
+    const matches = filename.match(regex);
+    return matches && matches[1] ? Number(filename.match(regex)[1]) : 0;
   },
 
   checkIfTheFileNameIsAutorized(file) {
